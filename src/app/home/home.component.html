@@ -1,0 +1,8 @@
+<div style="text-align: center">
+  <h1>Humming Box</h1>
+  <p class="lead">The Place Where Meals Begin..</p>
+  <div style="text-align: center">
+    <button class="btn btn-success btn-sm" style="margin: 10px" (click)="onOrderNow()">Order Now</button>
+    <button *ngIf="!isLoggedIn" class="btn btn-success btn-sm" style="margin: 10px" (click)="onSignUp()">Sign Up</button>
+  </div>
+</div>

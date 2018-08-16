@@ -1,0 +1,10 @@
+
+
+.panel-body img {
+    width: 10rem;
+    height: 10rem;
+}
+.panel-image {
+    overflow: hidden;
+    position: relative;
+}

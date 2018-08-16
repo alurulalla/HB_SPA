@@ -1,0 +1,52 @@
+<div class="container" *ngIf="historyDetails.length > 0">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="panel panel-default" *ngFor="let order of historyDetails">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-2">
+                  <b>{{order.price}}</b>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <span style="font-weight: bold">Order Id:</span> {{order.orderId}}
+                  </div>
+                  <div class="row">
+                    <span style="font-weight: bold">Items:</span>
+                    <li *ngFor="let item of order.items">
+                      {{item.itemName}} - ({{item.quantity}} X {{item.unitPrice}})
+                    </li>
+                  </div>
+                  <div class="row">
+                    <span style="font-weight: bold">Date:</span> {{order.created | date: 'mediumDate'}}
+                  </div>
+                  <div class="row">
+                    <span style="font-weight: bold">Status:</span>Delivered Successfully
+                  </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-success btn-sm" style="margin: 10px" (click)="onOrderNow()">Re-Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  
+</div>
+<!-- <div class="container">
+  <ng-template #noHistoryData>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+            <div class="col-md-5">
+                <p>You dont have previous orders. Please order now.</p>
+                <button class="btn btn-success btn-sm" style="margin: 10px" (click)="onOrderNow()">Order Now</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div> -->
